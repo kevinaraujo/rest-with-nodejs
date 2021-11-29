@@ -1,7 +1,19 @@
 const customExpress = require('./config/customExpress')
+const connection = require('./infra/connection')
+const Tables = require('./infra/tables')
 
-const app = customExpress()
+connection.connect((error) => {
+    if (error) {
+        console.log(error)
+    } else {
+        console.log('Connected successfully')
 
-app.listen(3000, () => {
-    console.log('Server running on port 3000')
+        Tables.init(connection)
+        const app = customExpress()
+
+        app.listen(3000, () => {
+            console.log('Server running on port 3000')
+        })
+    }
 })
+
