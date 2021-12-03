@@ -11,8 +11,10 @@ class Tables {
             client varchar(50) NOT NULL, 
             pet varchar(20), 
             service varchar(20) NOT NULL, 
+            date DATETIME NOT NULL,
             status varchar(20) NOT NULL,
             description text,
+            created_at DATETIME NOT NULL,
             PRIMARY KEY(id)
         )`
 
