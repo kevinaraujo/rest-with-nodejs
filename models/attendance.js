@@ -43,6 +43,34 @@ class Attendance {
             
         })
     }
+
+    list(res) {
+        const sql = 'SELECT * FROM Attendance'
+
+        connection.query(sql, (error, data) => {
+            if (error) {
+                res.status(400).json(error)
+                return
+            }
+
+            res.status(200).json(data)
+            return
+        })
+    }
+
+    getById(id, res) {
+        const sql = `SELECT * FROM Attendance WHERE id=${id}`
+
+        connection.query(sql, (error, data) => {
+            if (error) {
+                res.status(400).json(error)
+                return
+            }
+
+            res.status(200).json(data[0])
+            return
+        })
+    }
 }
 
 module.exports = new Attendance
