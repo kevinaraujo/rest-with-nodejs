@@ -1,0 +1,171 @@
+{
+	"variables": [],
+	"info": {
+		"name": "petshop",
+		"_postman_id": "261cba75-521c-c939-9c30-6f66ae202803",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Attendance - Get By ID",
+			"request": {
+				"url": "http://localhost:3000/attendances/1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client",
+							"value": "kevin",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "pet",
+							"value": "kruger",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "service",
+							"value": "wash",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "scheduled",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "very good dog",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "date",
+							"value": "09/12/2021",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Attendance - Get All",
+			"request": {
+				"url": "http://localhost:3000/attendances",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Attendance - Update",
+			"request": {
+				"url": "http://localhost:3000/attendances/2",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "date",
+							"value": "22/10/2021",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Attendance - Create",
+			"request": {
+				"url": "http://localhost:3000/attendances",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client",
+							"value": "kevin3",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "pet",
+							"value": "jasmin",
+							"description": ""
+						},
+						{
+							"key": "service",
+							"value": "wash",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "so good",
+							"description": ""
+						},
+						{
+							"key": "date",
+							"value": "10/12/2021",
+							"description": ""
+						},
+						{
+							"key": "status",
+							"value": "open",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Attendance - Delete",
+			"request": {
+				"url": "http://localhost:3000/attendances/2",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
