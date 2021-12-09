@@ -6,10 +6,10 @@ class Attendance {
 
         const date = moment(attendance.date, 'DD/MM/YYYY').format('YYYY-MM-DD HH:MM:SS')
         const created_at = moment().format('YYYY-MM-DD HH:MM:SS')
-        
+
         const dateIsValid = moment(date).isSameOrAfter(created_at)
         const clientIsValid = attendance.client.length >= 5
-
+        
         const validations = [
             { 
                 name: 'date',
@@ -68,6 +68,24 @@ class Attendance {
             }
 
             res.status(200).json(data[0])
+            return
+        })
+    }
+
+    update(id, data, res) {
+        const sql = 'UPDATE Attendance SET ? WHERE id=?'
+
+        if (data.date) {
+            data.date = moment(data.date, 'DD/MM/YYYY').format('YYYY-MM-DD HH:MM:SS')
+        }
+
+        connection.query(sql, [data, id], (error, result) => {
+            if (error) {
+                res.status(400).json(error)
+                return
+            }
+
+            res.status(200).json(result)
             return
         })
     }
